@@ -30,19 +30,58 @@
       Formats the value, "val", as U.S. currency.
       
 */
+window.addEventListener("load", function () {
+      var changingCells = document.querySelectorAll('input[class="sum"]');
+      for (var i = 0; i < changingCells.length; i++) {
+            changingCells[i].onchange = calcExp;
+      }
+      document.getElementById("submitButton").onclick = validateSummary;
+})
 
 
+function validateSummary() {
+      var validate = document.getElementById("summary");
+      if (validate.validity.valueMissing) {
+            validate.setCustomValidity("You must include a summary of the trip in your report");
+      } else {
+            validate.setCustomValidity("");
+      }
+}
 
+function calcClass() {
+      var sumFields = document.getElementsByClassName("sumClass");
+      var sumTotal = 0;
+      for (var i = 0; i < sumFields.length; i++) {
+            var itemValue = parseFloat(sumFields[i].value);
+            if(!isNan(itemValue)){
+                  itemValue += itemValue; 
+            }
+            else{
 
+            }
+      }
+}
+
+function calcExp(){
+      var expTable = document.querySelectorAll(tr);
+      for(var i = 0; i < expTable.length; i++){
+            calcClass
+      }
+}
 
 
 
 
 function formatNumber(val, decimals) {
-   return val.toLocaleString(undefined, {minimumFractionDigits: decimals, 
-                                         maximumFractionDigits: decimals});
+      return val.toLocaleString(undefined, {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+      });
 }
 
 function formatUSCurrency(val) {
-   return val.toLocaleString('en-US', {style: "currency", currency: "USD"} );
+      return val.toLocaleString('en-US', {
+            style: "currency",
+            currency: "USD"
+      });
 }
