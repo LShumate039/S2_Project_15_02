@@ -18,7 +18,7 @@
   <meta charset="utf-8" />
   <link href="dl_base.css" rel="stylesheet" />
   <link href="dl_layout.css" rel="stylesheet" />
-  <script src="dl_expense.js"></script>
+  <script src="dl_expense.js" defer></script>
 
 
 </head>
@@ -76,8 +76,8 @@
         </tr>
         <tr>
           <td><input type="text" name="lname" id="lname" required /></td>
-          <td><input type="text" name="fname" id="fname" required pattern="" /></td>
-          <td><input type="text" name="init" id="init" required pattern="" /></td>
+          <td><input type="text" name="fname" id="fname" required /></td>
+          <td><input type="text" name="init" id="init" required /></td>
           <th>Department<span>*</span></th>
           <td><input type="text" name="deptID" id="deptID" required placeholder="DEPTnnnnnn" pattern="DEPT\d{4,6}" />
           </td>
